@@ -2,13 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 <head>
-    <title>Log in</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link rel="stylesheet" href="/custom.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/custom.js"></script>
+    <div th:replace="/fragments/headlinks :: head-styles" ></div>
 </head>
 <body>
     <nav class="row navbar navbar-inverse">
@@ -27,6 +21,7 @@
                     @<span sec:authentication="name"></span></a>
                 <li sec:authorize="isAuthenticated()"><a href="../logout">Logout</a></li>
                 <li sec:authorize="!isAuthenticated()"><a href="../login">Login</a></li>
+                <li sec:authorize="!isAuthenticated()"><a href="../signup">Sign Up</a></li>
             </ul>
         </div>
     </div>
